@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root{
+    --bg:#081c25;
+    --textwhite:white;
+    --btn:#5272F2;
+    --textsoft:#F6F1F1;
+}
+body{
+    background-color: var(--bg);
+    color: var(--textwhite);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.active{
+    color: aqua;
+}
