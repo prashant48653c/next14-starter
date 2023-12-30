@@ -1,5 +1,6 @@
 import React from 'react'
 import Blogcard from '../../components/Blogcard'
+import { getPost, getUsers } from '@/lib/data'
 
 
 
@@ -7,7 +8,8 @@ const fetchdata=async()=>{
   const res=await fetch("https://jsonplaceholder.typicode.com/posts")
    
   let data=await res.json()
-
+let p=await getUsers()
+console.log(p)
   return data
 }
 const BlogPage = async() => {

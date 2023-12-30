@@ -21,7 +21,7 @@ Buy now
 
       </div>
 
-      <div initial={{opacity:0}}  transition={{ ease: "anticipate", repeat: Infinity, opacity:{repeat:0}, duration: 1 }} animate={{y:-10}}  whileInView={{opacity:1}}   >
+      <div initial={{opacity:0}}  transition={{ ease: "anticipate", repeat: Infinity, opacity:{repeat:0}, duration: 1 }} animate={{y:-10}}       >
       <Image
       src="/food.svg"
       width={400}
