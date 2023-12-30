@@ -18,7 +18,7 @@ export const getPost=async()=>{
 export const getSinglePost=async(slug)=>{
     try {
         await connectDB()
-        const post=await Nextblog.find({slug:slug}) 
+        const post=await Nextblog.findOne({slug:slug}) 
         return post
     } catch (error) {
         console.log("Error while getting the single post ",error)
