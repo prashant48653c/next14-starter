@@ -12,7 +12,7 @@ const loading = () => {
   color="blue"
   ariaLabel="ball-triangle-loading"
   wrapperStyle={{}}
-  wrapperClass=""
+  wrapperclassName=""
   visible={true}
   />
 </>

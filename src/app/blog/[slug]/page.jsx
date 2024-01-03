@@ -1,14 +1,22 @@
 import { getSinglePost } from '@/lib/data'
 import React from 'react'
-
-
  
 
+
+export const generateMetadata=async({params})=>{
+const {slug}=params
+const post=await getSinglePost(slug)
+return{
+  title:post.title,
+  desc:post.desc
+}
+}
 const SlugPage =async ({params}) => {
   
  const {slug}=(params)
+ 
  const blog=await getSinglePost(slug)
- console.log(blog)
+ 
   return (
     <div  className='w-full flex-col justify-center flex items-center '>
       <div className='text-3xl my-3'>
