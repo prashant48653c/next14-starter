@@ -4,7 +4,7 @@ import { auth, signIn } from "@/lib/auth"
  
 const Loginpage = async() => {
     const session=await auth()
-    console.log(session)
+    console.log(session," is session")
 
   return (
     <div>

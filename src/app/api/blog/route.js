@@ -8,6 +8,6 @@ export const GET=async(request)=>{
         const post=await Nextblog.find({});
         return NextResponse.json({data:post})
     }catch(err){
-        console.log(err)
+        console.log(err,"when getting blog")
     }
 }

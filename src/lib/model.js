@@ -19,7 +19,7 @@ const NextuserSchema=new mongoose.Schema({
     },
     password:{
         type:String,
-        required:true,
+        
         min:6,
 
     },
@@ -66,5 +66,5 @@ const NextblogSchema=new mongoose.Schema({
 )
 
 
-export const Nextuser=mongoose.models.Nextuser || mongoose.model("Nextuser",NextuserSchema)
-export const Nextblog=mongoose.models.Nextblog || mongoose.model("Nextblog",NextblogSchema)
+export const Nextuser=mongoose.models?.Nextuser || mongoose.model("Nextuser",NextuserSchema)
+export const Nextblog=mongoose.models?.Nextblog || mongoose.model("Nextblog",NextblogSchema)
