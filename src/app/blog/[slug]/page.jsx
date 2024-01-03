@@ -1,11 +1,17 @@
 import { getSinglePost } from '@/lib/data'
 import React from 'react'
  
+const fetchdata=async(slug)=>{
+const res=await fetch(`http://localhost:3000/api/blog/${slug}`)
+let data= await res.json()
+ 
 
+return data[0]
+}
 
 export const generateMetadata=async({params})=>{
 const {slug}=params
-const post=await getSinglePost(slug)
+const post=await fetchdata(slug)
 return{
   title:post.title,
   desc:post.desc
@@ -15,7 +21,7 @@ const SlugPage =async ({params}) => {
   
  const {slug}=(params)
  
- const blog=await getSinglePost(slug)
+ const blog=await fetchdata(slug)
  
   return (
     <div  className='w-full flex-col justify-center flex items-center '>

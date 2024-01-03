@@ -1,8 +1,9 @@
-'use client'
+ 'use server'
+import { handleLogout } from '@/lib/actions'
 import Link from 'next/link'
-import { useState } from 'react'
+ 
 const Navbar = () => {
-const [isAdmin, setisAdmin] = useState(false)
+ 
   return (
    
 
@@ -35,16 +36,18 @@ const [isAdmin, setisAdmin] = useState(false)
         <li>
           <Link href="/contact" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</Link>
         </li>
-        <button onClick={()=>setisAdmin(true)}>Change</button>
+       
 {/* login */}
-{
-  isAdmin &&
-  (
+ 
+   
     <li>
-    <Link href="/logout" className="block  p-2 bg-purple-600 px-3 text-gray-900 rounded hover:bg-gray-100   md:border-0">Logout</Link>
+      <form action={handleLogout}>
+      <button  className="block  p-2 bg-purple-600 px-3 text-gray-900 rounded hover:bg-gray-100   md:border-0">Logout</button>
+      </form>
+
   </li>
-  )
-}
+  
+ 
       
       </ul>
     </div>

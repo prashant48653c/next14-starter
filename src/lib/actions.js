@@ -1,3 +1,4 @@
+import { signIn, signOut } from "./auth"
 import { Nextblog } from "./model"
 import { connectDB } from "./utils"
 import {NextResponse} from "next/server"
@@ -11,3 +12,17 @@ import {NextResponse} from "next/server"
  revalidate("/blog")
  return NextResponse.json({data:post})
  }
+
+
+
+ export const handleLogin=async()=>{
+   'use server'
+  await signIn('github')
+
+}
+
+export const handleLogout=async()=>{
+   
+  await signOut('github')
+
+}

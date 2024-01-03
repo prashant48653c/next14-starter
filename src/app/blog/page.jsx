@@ -1,12 +1,18 @@
+ 
 import React from 'react'
 import Blogcard from '../../components/Blogcard'
 import { getPost, getUsers } from '@/lib/data'
 
-
+const fetchdata=async()=>{
+  const posts=await fetch("http://localhost:3000/api/blog")
+  const data = await posts.json();
+ return data
+}
 
  
 const BlogPage = async() => {
-  const posts=await getPost()
+  const posts=await fetchdata()
+ 
   return (
     <section className='flex gap-4 justify-center flex-wrap basis-3'>
 
@@ -16,7 +22,7 @@ const BlogPage = async() => {
 return (
   <div key={post.id}> 
  
-<Blogcard  post={post}/>
+<Blogcard   post={post}/>
   </div>
 
 )
